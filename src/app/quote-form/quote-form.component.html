@@ -21,15 +21,15 @@
       <h2 class="text-center">Quotes</h2>
 
       <ul *ngFor="let userquote of userquote">
-        <li class="text-center" appHighlightquote>
+        <li class="text-center">
           <div class="card">
-            <div class="card-body"> {{userquote.id}}
+            <div class="card-body" appHighlightquote> {{userquote.id}}
             {{userquote.quoteContent}}
             <p><span>Inspirational {{ userquote.upvotes }}</span> -- <span> Subduing {{ userquote.downvotes }}</span>
             </p>
-            <div class="card-footer">
-              Author Name -{{userquote.authorname}}
-            </div>
+          </div>
+          <div class="card-footer text-success">
+            Author Name -{{userquote.authorname}}
           </div>
           </div>
         </li>
