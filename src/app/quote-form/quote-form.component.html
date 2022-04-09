@@ -21,9 +21,9 @@
       <h2 class="text-center">Quotes</h2>
 
       <ul *ngFor="let userquote of userquote">
-        <li>{{ userquote.id}} 
+        <li class="text-center">{{ userquote.id}} 
           {{userquote.quoteContent}}
-          <p><span>upvote?{{ userquote.upvotes }}</span> -- <span> Downvote?{{ userquote.downvotes }}</span></p>
+          <p><span>Inspirational {{ userquote.upvotes }}</span> -- <span> Subduing {{ userquote.downvotes }}</span></p>
         </li>
       </ul>
 
