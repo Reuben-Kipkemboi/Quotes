@@ -1,75 +1,46 @@
-<div class="container mt-4">
-  <div class="row ms-3">
-    <div class="col-md-4 bg-light" id="form">
-      <form #quoteForm = 'ngForm'>
-        <h2 class="text-center">Create/ Vote Quote </h2>
-        <hr>
-        <div class="mb-3">
-          <label for="quote" class="form-label">Your Favourite Quote</label>
-          <textarea class="form-control" id="quotearea"[(ngModel)]="newQuote.quoteContent" name="quote" rows="5" placeholder="Tough times don't last"#quotearea = "ngModel" required></textarea>
-          <!-- display of user quote text -->
-          <p class="text-success ms-3">{{newQuote.quoteContent}}</p> 
+   <form (ngSubmit)='addQuote() ' #quoteForm='ngForm'>
+     <h2 class="text-center">Create/ Vote Quote </h2>
+     <hr>
+     <div class="mb-3">
+       <label for="quote" class="form-label">Your Favourite Quote</label>
+       <textarea class="form-control" id="quotearea" [(ngModel)]="newQuote.quoteContent" name="quote" rows="5"
+         placeholder="Tough times don't last" #quotearea="ngModel" required></textarea>
+       <!-- display of user quote text -->
+       <p class="text-success ms-3">{{newQuote.quoteContent}}</p>
 
-          <!-- Validating the form  -->
-          <p [hidden]="quotearea.valid || quotearea.pristine" class = "alert alert-info">
-            <em>Enter an author name</em>
-          </p>
-        </div>
+       <!-- Validating the form  -->
+       <p [hidden]="quotearea.valid || quotearea.pristine" class="alert alert-info">
+         <em>Enter an author name</em>
+       </p>
+     </div>
 
-        <div class="mb-3">
-          <label for="author" class="form-label">Author's Name</label>
-          <input type="text" class="form-control" id="author" [(ngModel)]="newQuote.authorname" placeholder="Lurther King" name="author" #author ='ngModel' required>
-          <!-- display author name -->
-          <p class="text-primary ms-3">{{newQuote.authorname}}</p> 
+     <div class="mb-3">
+       <label for="author" class="form-label">Author's Name</label>
+       <input type="text" class="form-control" id="author" [(ngModel)]="newQuote.authorname" placeholder="Lurther King"
+         name="author" #author='ngModel' required>
+       <!-- display author name -->
+       <p class="text-primary ms-3">{{newQuote.authorname}}</p>
 
-          <!-- Validating the form  -->
-          <p [hidden]="author.valid || author.pristine" class = "alert alert-warning">
-            <em>Enter an author name</em>
-          </p>
-        </div>
+       <!-- Validating the form  -->
+       <p [hidden]="author.valid || author.pristine" class="alert alert-warning">
+         <em>Enter an author name</em>
+       </p>
+     </div>
 
-        <div class="mb-3">
-          <label for="username" class="form-label">Your Name</label>
-          <input type="text" class="form-control" id="personname" placeholder="John Doe"  [(ngModel)]="newQuote.username"  name="person-name" #personname ='ngModel'required>
-           <!-- display person name -->
-           <p class="text-danger ms-3">{{newQuote.username}}</p> 
+     <div class="mb-3">
+       <label for="username" class="form-label">Your Name</label>
+       <input type="text" class="form-control" id="personname" placeholder="John Doe" [(ngModel)]="newQuote.username"
+         name="person-name" #personname='ngModel' required>
+       <!-- display person name -->
+       <p class="text-danger ms-3">{{newQuote.username}}</p>
 
-           <!-- Validating the form  -->
-          <p [hidden]="personname.valid || personname.pristine" class = "alert alert-danger">
-            <em>Enter an author name</em>
-          </p>
-        </div>
+       <!-- Validating the form  -->
+       <p [hidden]="personname.valid || personname.pristine" class="alert alert-danger">
+         <em>Enter an author name</em>
+       </p>
+     </div>
 
-        <div class="mb-3 text-center">
-          <button type="button" class="btn btn-success">Add Quote</button>
-        </div>
-      </form>
-
-
-    </div>
-    <div class="col-md-8 bg-light">
-      <h2 class="text-center">Quotes</h2>
-      <hr>
-
-      <ul *ngFor="let userquote of userquote">
-        <li>
-          <div class="card">
-            <div class="card-body" appHighlightquote>
-              <figure>
-                <!-- from the quote component that shows the quote -->
-                <app-quote [userquote]="userquote"></app-quote>
-                <!-- importing quote details from about quote component -->
-                <app-aboutquote [userquote]="userquote"></app-aboutquote>
-              </figure>
-            </div>
-            <div class="card-footer text-success text-center">
-              Quote Added by <cite title="Source Title">-{{userquote.username}}</cite>
-            </div>
-          </div>
-        </li>
-      </ul>
-
-    </div>
-  </div>
-
-</div>
+     <div class="mb-3 text-center">
+       <button type="submit" class="btn btn-success">Add Quote</button>
+     </div>
+   </form>

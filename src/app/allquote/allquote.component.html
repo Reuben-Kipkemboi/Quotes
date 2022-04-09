@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-4 bg-light" id="form">
+      <app-quote-form (createQuote)="addNewQuote($event)"></app-quote-form>
+    </div>
+
+
+    <div class="col-md-8 bg-light">
+      <h2 class="text-center">Quotes</h2>
+      <hr>
+
+      <ul *ngFor="let userquote of userquote">
+        <li>
+          <div class="card">
+            <div class="card-body" appHighlightquote>
+              <figure>
+                <!-- from the quote component that shows the quote -->
+                <app-quote [userquote]="userquote"></app-quote>
+                <!-- importing quote details from about quote component -->
+                <app-aboutquote [userquote]="userquote"></app-aboutquote>
+              </figure>
+            </div>
+            <div class="card-footer text-success text-center">
+              Quote Added by <cite title="Source Title">-{{userquote.username}}</cite>
+            </div>
+          </div>
+
+          <!-- User created quotes comes in here....... -->
+        </li>
+      </ul>
+
+
+
+    </div>
+  </div>
+</div>
