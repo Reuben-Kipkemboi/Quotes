@@ -21,7 +21,7 @@
       <h2 class="text-center">Quotes</h2>
 
       <ul *ngFor="let userquote of userquote">
-        <li class="text-center">
+        <li>
           <div class="card">
              <div class="card-body" appHighlightquote>
             <figure>
@@ -38,7 +38,7 @@
         
             </figure>
           </div>
-          <div class="card-footer text-success">
+          <div class="card-footer text-success text-center">
             Quote Added by <cite title="Source Title">-{{userquote.username}}</cite>   
           </div>
           </div>
