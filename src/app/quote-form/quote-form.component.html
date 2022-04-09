@@ -2,7 +2,7 @@
   <div class="row ms-3">
     <div class="col-md-4">
       <div class="mb-3">
-        <label for="quote" class="form-label">Your Favourite Qoute</label>
+        <label for="quote" class="form-label">Your Favourite Quote</label>
         <textarea class="form-control" id="quote-area" rows="5" placeholder="Tough times don't last"></textarea>
       </div>
 
@@ -21,9 +21,17 @@
       <h2 class="text-center">Quotes</h2>
 
       <ul *ngFor="let userquote of userquote">
-        <li class="text-center">{{ userquote.id}} 
-          {{userquote.quoteContent}}
-          <p><span>Inspirational {{ userquote.upvotes }}</span> -- <span> Subduing {{ userquote.downvotes }}</span></p>
+        <li class="text-center" appHighlightquote>
+          <div class="card">
+            <div class="card-body"> {{userquote.id}}
+            {{userquote.quoteContent}}
+            <p><span>Inspirational {{ userquote.upvotes }}</span> -- <span> Subduing {{ userquote.downvotes }}</span>
+            </p>
+            <div class="card-footer">
+              Author Name -{{userquote.authorname}}
+            </div>
+          </div>
+          </div>
         </li>
       </ul>
 
