@@ -1,6 +1,6 @@
 <figcaption class="blockquote-footer">
-  Author <cite title="Source Title">{{userquote.authorname}}</cite>
+  Author: <cite title="Source Title">{{userquote.authorname}}</cite>
 </figcaption>
 
-<p class="text-center"><span>Inspirational {{ userquote.upvotes }}</span> -- <span> UnInspirational {{ userquote.downvotes }}</span>
-</p>
+<p class="text-center"><span>Inspirational <fa-icon [icon]="faThumbsUp"></fa-icon> {{ userquote.upvotes }}</span> |
+  <span> UnInspirational <fa-icon [icon]="faThumbsDown"></fa-icon>  {{ userquote.downvotes }}</span></p>

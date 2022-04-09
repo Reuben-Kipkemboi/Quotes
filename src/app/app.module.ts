@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome' 
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,6 +12,7 @@ import { QuoteComponent } from './quote/quote.component';
 import { AboutquoteComponent } from './aboutquote/aboutquote.component';
 import { AllquoteComponent } from './allquote/allquote.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,12 +21,15 @@ import { AllquoteComponent } from './allquote/allquote.component';
     HighlightquoteDirective,
     QuoteComponent,
     AboutquoteComponent,
-    AllquoteComponent
+    AllquoteComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    FontAwesomeModule    
+      
   ],
   providers: [],
   bootstrap: [AppComponent]
