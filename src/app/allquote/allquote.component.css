@@ -1,0 +1,8 @@
+#outline{
+    outline: 0.2px solid brown;
+}
+ul li{
+    list-style-type: circle;
+    list-style-position: inside;
+    /* color: brown; */
+}

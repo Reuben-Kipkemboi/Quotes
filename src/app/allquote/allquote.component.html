@@ -1,33 +1,58 @@
-<div class="container">
+<div class="container" id="outline">
   <div class="row">
     <div class="col-md-4 bg-light" id="form">
       <app-quote-form (createQuote)="addNewQuote($event)"></app-quote-form>
     </div>
-
-
-    <div class="col-md-8 bg-light">
+    <div class="col-md-8 bg-light" highlightquote>
       <h2 class="text-center">Quotes</h2>
       <hr>
-
       <ul *ngFor="let userquote of userquote">
-        <li>
-          <div class="card">
-            <div class="card-body" appHighlightquote>
-              <figure>
-                <!-- from the quote component that shows the quote -->
-                <app-quote [userquote]="userquote"></app-quote>
-                <hr>
-                <!-- importing quote details from about quote component -->
-                <app-aboutquote [userquote]="userquote"></app-aboutquote>
-              </figure>
-            </div>
-            <div class="card-footer text-success text-center">
-              Quote Added by <cite title="Source Title">-{{userquote.username}}</cite>
-            </div>
-          </div>
+        <div *ngIf="userquote.upvotes == highestVotes && userquote.upvotes >1; then textHighlight else noHighlight"></div>
+        <ng-template #textHighlight>
+          <li appHighlightquote>
 
-          <!-- User created quotes comes in here....... -->
-        </li>
+            <div class="card">
+              <div class="card-body">
+                <figure>
+                  <!-- from the quote component that shows the quote -->
+                  <app-quote [userquote]="userquote"></app-quote>
+                  <hr>
+                  <!-- importing quote details from about quote component -->
+                  <app-aboutquote [userquote]="userquote"></app-aboutquote>
+                </figure>
+              </div>
+              <div class="card-footer text-success text-center">
+                Quote Added by <cite title="Source Title">-{{userquote.username}}</cite>
+              </div>
+            </div>
+  
+            <!-- User created quotes comes in here....... -->
+          </li>
+
+        </ng-template>
+
+        <ng-template #noHighlight>
+          <li>
+
+            <div class="card">
+              <div class="card-body">
+                <figure>
+                  <!-- from the quote component that shows the quote -->
+                  <app-quote [userquote]="userquote"></app-quote>
+                  <hr>
+                  <!-- importing quote details from about quote component -->
+                  <app-aboutquote [userquote]="userquote"></app-aboutquote>
+                </figure>
+              </div>
+              <div class="card-footer text-success text-center">
+                Quote Added by <cite title="Source Title">-{{userquote.username}}</cite>
+              </div>
+            </div>
+  
+            <!-- User created quotes comes in here....... -->
+          </li>
+
+        </ng-template>
       </ul>
 
 

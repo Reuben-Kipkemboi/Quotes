@@ -18,9 +18,8 @@ export class AllquoteComponent implements OnInit {
   }
 
   userquote:Quotedetails[] = [
-    new Quotedetails(1, "East or west home is best", 0, 0, 'Belinda kross', 'Reuby and Reuby'),
-    // new Quotedetails(4, "East or west home is best", 0, 0, 'Jane Doe', 'Reuben Kipkemboi'),
-    new Quotedetails(17, "The marathon continues.....", 0, 0, 'The Great Nipsey Hussle', 'John Doe')
+    new Quotedetails(1, "East or west home is best", 23, 3, 'Belinda kross', 'Reuby and Reuby'),
+    new Quotedetails(17, "The marathon continues.....", 59, 3, 'Nipsey Hussle, The Great', 'John Doe')
   ]; //creating of property using our class.
 
   addNewQuote(userquote: Quotedetails){
@@ -28,6 +27,10 @@ export class AllquoteComponent implements OnInit {
     userquote.id = quoteLength+1;
     this.userquote.push(userquote);
   };
+
+  // to get the highest vote count
+  votesarray :number[] =this.userquote.map(userquote => userquote.upvotes)
+  highestVotes = Math.max(...this.votesarray)
 
   constructor() { }
 
