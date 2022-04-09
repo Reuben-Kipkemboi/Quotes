@@ -25,17 +25,10 @@
           <div class="card">
              <div class="card-body" appHighlightquote>
             <figure>
-              <blockquote class="blockquote">
-                <p>{{userquote.quoteContent}}</p>
-              </blockquote>
-
-              <figcaption class="blockquote-footer">
-                Author <cite title="Source Title">{{userquote.authorname}}</cite>
-              </figcaption>
-
-              <p><span>Inspirational {{ userquote.upvotes }}</span> -- <span> Subduing {{ userquote.downvotes }}</span>
-              </p>
-        
+              <!-- from the quote component that shows the quote -->
+              <app-quote [userquote]="userquote"></app-quote> 
+              <!-- importing quote details from about quote component -->
+              <app-aboutquote [userquote]="userquote"></app-aboutquote>
             </figure>
           </div>
           <div class="card-footer text-success text-center">
