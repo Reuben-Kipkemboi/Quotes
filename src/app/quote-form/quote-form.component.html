@@ -1,6 +1,6 @@
 <div class="container mt-4">
   <div class="row ms-3">
-    <div class="col-md-4">
+    <div class="col-md-4 bg-light">
       <div class="mb-3">
         <label for="quote" class="form-label">Your Favourite Quote</label>
         <textarea class="form-control" id="quote-area" rows="5" placeholder="Tough times don't last"></textarea>
@@ -16,8 +16,13 @@
         <input type="text" class="form-control" id="person-name" placeholder="John Doe">
       </div>
 
+      <div class="mb-3 text-center">
+        <button type="button" class ="btn btn-success">Add Quote</button>
+      </div>
+    
+
     </div>
-    <div class="col-md-8">
+    <div class="col-md-8 bg-light">
       <h2 class="text-center">Quotes</h2>
 
       <ul *ngFor="let userquote of userquote">
