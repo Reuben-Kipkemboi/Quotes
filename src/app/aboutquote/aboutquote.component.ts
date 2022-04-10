@@ -16,6 +16,8 @@ export class AboutquoteComponent implements OnInit {
   @Input()
   userquote!: Quotedetails;
 
+
+  
   constructor() {
     
    }

@@ -13,6 +13,7 @@ export class AllquoteComponent implements OnInit {
 
   // ngsubmit event Emitter
   @Output() createQuote = new EventEmitter<Quotedetails>(); // create quote event emitter
+  @Output() userquoteDelete= new EventEmitter<boolean>();
 
   addQuote(){
     this.createQuote.emit(this.newQuote);
@@ -34,6 +35,11 @@ export class AllquoteComponent implements OnInit {
   // to get the highest vote count
   votesarray :number[] =this.userquote.map(userquote => userquote.upvotes)
   highestVotes = Math.max(...this.votesarray)
+
+
+  quoteDelete(userquotedelete:any){
+    this.createQuote.emit(userquotedelete)
+  }
 
   constructor() { }
 
