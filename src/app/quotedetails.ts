@@ -1,17 +1,23 @@
 export class Quotedetails {
-    id:number;
-    quoteContent:string;
-    upvotes:number;
-    downvotes:number;
-    authorname:string;
-    username:string;
+    id: number;
+    quoteContent: string;
+    upvotes: number;
+    downvotes: number;
+    authorname: string;
+    username: string;
+    showDescription : boolean;
+    // description: Array<string | number>;
+    additionDate:Date
 
-    constructor(id:number, quoteContent:string, upvotes:number, downvotes:number, authorname:string, username:string){
+    constructor(id: number, quoteContent: string, upvotes: number, downvotes: number, authorname: string, username: string, additionDate:Date) {
         this.id = id;
         this.quoteContent = quoteContent;
         this.upvotes = upvotes;
         this.downvotes = downvotes;
         this.authorname = authorname;
-        this.username = username; 
+        this.username = username;
+        // this.description = description;
+        this.showDescription = false;
+        this.additionDate = additionDate;
     }
 }

@@ -11,6 +11,7 @@ import { HighlightquoteDirective } from './highlightquote.directive';
 import { QuoteComponent } from './quote/quote.component';
 import { AboutquoteComponent } from './aboutquote/aboutquote.component';
 import { AllquoteComponent } from './allquote/allquote.component';
+import { AdditionDatePipe } from './addition-date.pipe';
 
 
 @NgModule({
@@ -22,6 +23,7 @@ import { AllquoteComponent } from './allquote/allquote.component';
     QuoteComponent,
     AboutquoteComponent,
     AllquoteComponent,
+    AdditionDatePipe,
     
   ],
   imports: [

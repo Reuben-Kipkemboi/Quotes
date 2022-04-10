@@ -6,7 +6,7 @@
     <div class="col-md-8 bg-light" highlightquote>
       <h2 class="text-center">Quotes</h2>
       <hr>
-      <ul *ngFor="let userquote of userquote">
+      <ul *ngFor="let userquote of userquote; let i= index">
         <div *ngIf="userquote.upvotes == highestVotes && userquote.upvotes >1; then textHighlight else noHighlight"></div>
         <ng-template #textHighlight>
           <li appHighlightquote>
@@ -22,11 +22,11 @@
                 </figure>
               </div>
               <div class="card-footer text-success text-center">
-                Quote Added by <cite title="Source Title">-{{userquote.username}}</cite>
+                Quote Added by <cite title="Source Title">-{{userquote.username}} on {{userquote.additionDate}}</cite>
               </div>
             </div>
   
-            <!-- User created quotes comes in here....... -->
+
           </li>
 
         </ng-template>
@@ -49,7 +49,6 @@
               </div>
             </div>
   
-            <!-- User created quotes comes in here....... -->
           </li>
 
         </ng-template>
