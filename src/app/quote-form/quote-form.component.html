@@ -4,26 +4,26 @@
      <div class="mb-3">
        <label for="quote" class="form-label">Your Favourite Quote</label>
        <textarea class="form-control" id="quotearea" [(ngModel)]="newQuote.quoteContent" name="quote" rows="5"
-         placeholder="Tough times don't last" #quotearea="ngModel" required></textarea>
+         placeholder="Tough times don't last" #quotearea="ngModel" required minlength = '4'></textarea>
        <!-- display of user quote text -->
        <p class="text-success ms-3">{{newQuote.quoteContent}}</p>
 
        <!-- Validating the form  -->
        <p [hidden]="quotearea.valid || quotearea.pristine" class="alert alert-info">
-         <em>Enter an author name</em>
+         <em>Enter a valid quote</em>
        </p>
      </div>
 
      <div class="mb-3">
        <label for="author" class="form-label">Author's Name</label>
        <input type="text" class="form-control" id="author" [(ngModel)]="newQuote.authorname" placeholder="Lurther King"
-         name="author" #author='ngModel' required>
+         name="author" #author='ngModel' required minlength="4">
        <!-- display author name -->
        <p class="text-primary ms-3">{{newQuote.authorname}}</p>
 
        <!-- Validating the form  -->
        <p [hidden]="author.valid || author.pristine" class="alert alert-warning">
-         <em>Enter an author name</em>
+         <em>Enter a valid author name</em>
        </p>
      </div>
 

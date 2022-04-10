@@ -16,10 +16,10 @@ export class AboutquoteComponent implements OnInit {
   // @Input()userquote!: Quotedetails;
 
   @Input() userquote!: Quotedetails;
-  @Output() isquoted = new EventEmitter<boolean>();
+  @Output() isComplete = new EventEmitter<boolean>();
 
   quoteDelete(complete:boolean){
-    this.isquoted.emit(complete);
+    this.isComplete.emit(complete);
   }
   
    

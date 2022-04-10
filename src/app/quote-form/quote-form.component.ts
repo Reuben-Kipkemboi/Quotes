@@ -8,7 +8,7 @@ import { Quotedetails } from '../quotedetails'; // importing our blueprint class
 })
 export class QuoteFormComponent implements OnInit {
   // help in creating a new instance of quote with the same properties
-  newQuote = new Quotedetails(0, "", 0, 0, "", "", new Date(2022, 3,4))
+  newQuote = new Quotedetails(0, "", 0, 0, "", "", new Date())
 
   // ngsubmit event Emitter
   @Output() createQuote = new EventEmitter<Quotedetails>(); // create quote event emitter

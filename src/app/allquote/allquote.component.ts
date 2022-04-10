@@ -1,6 +1,7 @@
 import { DatePipe, formatDate } from '@angular/common';
 import { Component, EventEmitter, OnInit, Output} from '@angular/core';
 import{Quotedetails} from '../quotedetails'
+import {faCircleChevronDown} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-allquote',
@@ -8,8 +9,9 @@ import{Quotedetails} from '../quotedetails'
   styleUrls: ['./allquote.component.css']
 })
 export class AllquoteComponent implements OnInit {
+  faCircleChevronDown = faCircleChevronDown;
   // help in creating a new instance of quote with the same properties
-  newQuote = new Quotedetails(0, "", 0, 0, "", "", new Date(2022,3,4));
+  newQuote = new Quotedetails(0, "", 0, 0, "", "", new Date());
 
   // ngsubmit event Emitter
   @Output() createQuote = new EventEmitter<Quotedetails>(); // create quote event emitter
@@ -19,8 +21,8 @@ export class AllquoteComponent implements OnInit {
   }
 
   userquote:Quotedetails[] = [
-    new Quotedetails(1, "East or west home is best", 0, 3, 'Belinda kross', 'Reuby and Reuby', new Date(2022, 3, 6)),
-    new Quotedetails(17, "The marathon continues.....", 0, 3, 'Nipsey Hussle, The Great', 'John Doe', new Date(2022, 3,4))
+    new Quotedetails(1, "The most important thing is to get rid of doubt. If you got doubt in what you are doing, it is not gonna work.", 0, 3, 'Dev Reuby', 'Reuby and Reuby', new Date(2022, 3, 6)),
+    new Quotedetails(17, "If you dont know your full-throttle history, the whole story of how you come too where you are, it’s kind of hard to put things together.", 0, 3, 'Nipsey Hussle, The Great', 'John Doe', new Date(2022, 3,4))
   ]; //creating of property using our class.
 
   addNewQuote(userquote: Quotedetails){

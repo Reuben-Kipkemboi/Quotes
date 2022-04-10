@@ -8,11 +8,28 @@
       <hr>
       <ul>
         <div *ngFor="let userquote of userquote; let i=index">
-          <app-quote [userquote]="userquote"></app-quote>
+          <div class="card mb-3">
+            <div class="card-body">
+              <figure>
+                <app-quote [userquote]="userquote" appHighlightquote></app-quote>
+                <hr>
+                <button class="btn btn-outline-secondary"(click)='toggleDetails(i)' id="info">More Info on Quote <fa-icon [icon]="faCircleChevronDown"></fa-icon></button>
+                <app-aboutquote *ngIf='userquote.showDescription' [userquote]="userquote"  (isComplete) = 'quoteDelete($event,i)'></app-aboutquote>  
+              </figure>
+            </div>
+            <div class="card-footer text-success text-center">
+              Quote Added by <cite title="Source Title">-{{userquote.username}} on <span class="date">{{userquote.additionDate | date | uppercase}}</span>  </cite>
+            </div>
 
-          <button (click)='toggleDetails(i)'>More Info on Quote</button>
+          </div>
 
-          <app-aboutquote *ngIf='userquote.showDescription' [userquote]="userquote"  (isComplete) = 'quoteDelete($event,i)'></app-aboutquote>
+
+          
+          <!-- <app-quote [userquote]="userquote" appHighlightquote></app-quote>
+
+          <button (click)='toggleDetails(i)' id="info">More Info on Quote</button> -->
+
+          <!-- <app-aboutquote *ngIf='userquote.showDescription' [userquote]="userquote"  (isComplete) = 'quoteDelete($event,i)'></app-aboutquote> -->
 
           
           <!-- <div *ngIf="userquote.upvotes == highestVotes && userquote.upvotes >1; then textHighlight else noHighlight"> -->
