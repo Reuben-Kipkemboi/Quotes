@@ -1,4 +1,4 @@
-import { Component, OnInit, Input} from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 import{Quotedetails } from '../quotedetails';
 import {faThumbsDown, faThumbsUp} from '@fortawesome/free-solid-svg-icons'; 
 
@@ -15,8 +15,23 @@ export class AboutquoteComponent implements OnInit {
 
   @Input()
   userquote!: Quotedetails;
+  @Output() createQuote= new EventEmitter<boolean>();
+  // delete quote
+  deleteQuote(myquote:boolean){
+    this.createQuote.emit(myquote)
+  }
 
+  // Addding polls on upvotes
+  upvoteClick(){
+    this.userquote.upvotes ++;
+  }
 
+  // downvoting the quote
+  downvoteClick(){
+    this.userquote.downvotes ++;
+  }
+
+  
   
   constructor() {
     
