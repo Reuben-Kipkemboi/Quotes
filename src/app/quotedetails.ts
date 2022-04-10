@@ -6,7 +6,6 @@ export class Quotedetails {
     authorname: string;
     username: string;
     showDescription : boolean;
-    // description: Array<string | number>;
     additionDate:Date
 
     constructor(id: number, quoteContent: string, upvotes: number, downvotes: number, authorname: string, username: string, additionDate:Date) {
@@ -16,7 +15,7 @@ export class Quotedetails {
         this.downvotes = downvotes;
         this.authorname = authorname;
         this.username = username;
-        // this.description = description;
+        this.showDescription = false;
         this.showDescription = false;
         this.additionDate = additionDate;
     }

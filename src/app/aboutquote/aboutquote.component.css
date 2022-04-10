@@ -1,3 +1,26 @@
 p span{
     color: brown;
 }
+#quoteDelete{
+    color: red;
+    outline: none;
+    border: none;
+    display: block;
+    float: right;
+}
+#quoteDelete:hover{
+    background-color:transparent;
+}
+#like, #dislike{
+    margin: 1%;
+    border: none;
+    background-color:transparent;
+
+}
+#like, #dislike fa-icon{
+    color: #030d2c;
+    height: 3vh;
+}
+.text-center .inspire{
+    color: #030d2c;
+}

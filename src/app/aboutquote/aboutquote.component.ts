@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 import{Quotedetails } from '../quotedetails';
-import {faThumbsDown, faThumbsUp} from '@fortawesome/free-solid-svg-icons'; 
+import {faThumbsDown, faThumbsUp, faTrashCan} from '@fortawesome/free-solid-svg-icons'; 
 
 
 @Component({
@@ -11,17 +11,19 @@ import {faThumbsDown, faThumbsUp} from '@fortawesome/free-solid-svg-icons';
 export class AboutquoteComponent implements OnInit {
   faThumbsUp =faThumbsUp
   faThumbsDown =faThumbsDown
+  faTrashCan = faTrashCan
 
+  // @Input()userquote!: Quotedetails;
 
-  @Input()
-  userquote!: Quotedetails;
-  @Output() createQuote= new EventEmitter<boolean>();
-  // delete quote
-  deleteQuote(myquote:boolean){
-    this.createQuote.emit(myquote)
+  @Input() userquote!: Quotedetails;
+  @Output() isquoted = new EventEmitter<boolean>();
+
+  quoteDelete(complete:boolean){
+    this.isquoted.emit(complete);
   }
-
-  // Addding polls on upvotes
+  
+   
+  // Adding polls on upvotes
   upvoteClick(){
     this.userquote.upvotes ++;
   }
@@ -31,8 +33,11 @@ export class AboutquoteComponent implements OnInit {
     this.userquote.downvotes ++;
   }
 
-  
-  
+  deletequote(){
+    alert('Delete quote');
+  }
+
+
   constructor() {
     
    }

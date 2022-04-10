@@ -1,10 +1,10 @@
-<figcaption class="blockquote-footer">
+<figcaption class="blockquote-footer text-success mt-3">
   Author: <cite title="Source Title">{{userquote.authorname}}</cite>
 </figcaption>
 
-<p class="text-center"><span>Inspirational <button (click)="upvoteClick()"><fa-icon [icon]="faThumbsUp"></fa-icon> </button> Votes:{{ userquote.upvotes }}</span> |
-  <span> UnInspirational<button (click)="downvoteClick()" ><fa-icon [icon]="faThumbsDown"></fa-icon> </button>{{ userquote.downvotes }}</span>
+<p class="text-center"><span class="inspire">Inspirational <button id ="like" (click)="upvoteClick()"><fa-icon [icon]="faThumbsUp"></fa-icon> </button> Likes:{{ userquote.upvotes }}</span> |
+  <span class="uninspire"> UnInspirational<button id ="dislike" (click)="downvoteClick()" ><fa-icon [icon]="faThumbsDown"></fa-icon> </button>Dislikes:{{ userquote.downvotes }}</span>
 
-  <button (click)=" deleteQuote(true)">Delete</button>
+  <button (click)= 'quoteDelete(true)' class="btn btn-outline-warning" id="quoteDelete"><fa-icon [icon]="faTrashCan"></fa-icon></button>
 
 </p>
