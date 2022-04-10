@@ -17,19 +17,6 @@ export class QuoteFormComponent implements OnInit {
     this.createQuote.emit(this.newQuote);
   }
 
-  // userquote:Quotedetails[] = [
-  //   new Quotedetails(1, "East or west home is best", 0, 0, 'Belinda kross', 'Reuby and Reuby', new Date(2022, 3,4)),
-  //   new Quotedetails(4, "East or west home is best", 0, 0, 'Jane Doe', 'Reuben Kipkemboi', new Date(2022, 3,4)),
-  //   new Quotedetails(17, "The marathon continues.....", 0, 0, 'The Great Nipsey Hussle', 'John Doe', new Date(2022, 3,4))
-  // ]; //creating of property using our class.
-
-  // addNewQuote(userquote: Quotedetails){
-  //   let quoteLength = this.userquote.length;
-  //   userquote.id = quoteLength+1;
-  //   // this.userquote.push(userquote);
-
-  // };
-
   constructor() { }
 
   ngOnInit(): void {
