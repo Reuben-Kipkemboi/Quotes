@@ -91,7 +91,7 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 * Email - [Reuben Kipkemboi](https://gmail.com)
 
 # live site
-* #### 
+* #### https://reuben-kipkemboi.github.io/Quotes/
 
 
 ## Further help
